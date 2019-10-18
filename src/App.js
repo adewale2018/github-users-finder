@@ -13,6 +13,16 @@ import Contact from "./components/pages/Contact";
 import NotFound from "./components/pages/NotFound";
 
 function App() {
+
+  let githubClientId;
+  let githubClientSecret;
+  if (process.env.NODE_ENV !== "production") {
+    githubClientId = process.env.APP_CLIENT_ID;
+    githubClientSecret = process.env.APP_CLIENT_SECRET;
+  } else {
+    githubClientId = process.env.CLIENT_ID;
+    githubClientSecret = process.env.CLIENT_SECRET;
+  }
   const [users, setUsers] = useState([]);
   const [user, setUser] = useState({});
   const [repos, setRepos] = useState([]);
@@ -30,7 +40,7 @@ function App() {
     const fetchData = async () => {
       setLoading(true);
       const res = await axios.get(
-        `https://api.github.com/users?client_id=${process.env.APP_CLIENT_ID}&client_secret=${process.env.APP_CLIENT_SECRET}`
+        `https://api.github.com/users?client_id=${githubClientId}&client_secret=${githubClientSecret}`
       );
       setUsers(res.data);
       setLoading(false);
@@ -42,7 +52,7 @@ function App() {
   const searchUsers = async name => {
     setLoading(true);
     const res = await axios.get(
-      `https://api.github.com/search/users?q=${name}&client_id=${process.env.APP_CLIENT_ID}&client_secret=${process.env.APP_CLIENT_SECRET}`
+      `https://api.github.com/search/users?q=${name}&client_id=${githubClientId}&client_secret=${githubClientSecret}`
     );
     setUsers(res.data.items);
     setLoading(false);
@@ -58,7 +68,7 @@ function App() {
   const getUser = async username => {
     setLoading(true);
     const res = await axios.get(
-      `https://api.github.com/users/${username}?client_id=${process.env.APP_CLIENT_ID}&client_secret=${process.env.APP_CLIENT_SECRET}`
+      `https://api.github.com/users/${username}?client_id=${githubClientId}&client_secret=${githubClientSecret}`
     );
     setUser(res.data);
     setLoading(false);
@@ -68,7 +78,7 @@ function App() {
   const getRepos = async username => {
     setLoading(true);
     const res = await axios.get(
-      `https://api.github.com/users/${username}/repos?per_page=5&sort=created:asc&client_id=${process.env.APP_CLIENT_ID}&client_secret=${process.env.APP_CLIENT_SECRET}`
+      `https://api.github.com/users/${username}/repos?per_page=5&sort=created:asc&client_id=${githubClientId}&client_secret=${githubClientSecret}`
     );
     setRepos(res.data);
     setLoading(false);
