@@ -122,7 +122,7 @@ function App() {
           />
           <Route exact path='/about' component={About} />
           <Route exact path='/contact' component={Contact} />
-          <Route componet={NotFound} />
+          <Route component={NotFound} />
         </div>
       </div>
     </Switch>
