@@ -13,7 +13,6 @@ import Contact from "./components/pages/Contact";
 import NotFound from "./components/pages/NotFound";
 
 function App() {
-
   let githubClientId;
   let githubClientSecret;
   if (process.env.NODE_ENV !== "production") {
@@ -122,8 +121,9 @@ function App() {
           />
           <Route exact path='/about' component={About} />
           <Route exact path='/contact' component={Contact} />
-          <Route component={NotFound} />
+          
         </div>
+        
       </div>
     </Switch>
   );
