@@ -19,10 +19,10 @@ It shows information about a Github user. Here is the link to the app. Check it 
 - React Hooks
 - Github API
 - Axios
-- Custom CSS
+- Bootstrap
 - FontAwesome
 - Google fonts etc
-- Netlify for deployment
+- Deployed on firebase
 
 ---
 
