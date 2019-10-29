@@ -7,7 +7,7 @@
 This is an app built with React that enables a user
 to search for Github users.
 
-<!-- It shows information about a Github user. Here is the link to the app. Check it out and have fun with it. <https://github-users-finder-app.netlify.com/> -->
+It shows information about a Github user. Here is the link to the app. Check it out and have fun with it. <https://github-users-finder.firebaseapp.com/>
 
 ---
 
@@ -34,4 +34,4 @@ to search for Github users.
 
 ---
 
-<!-- - ![GitHub Finder](/src/github-finder.PNG) -->
+- ![GitHub Finder](/src/github-finder.PNG)

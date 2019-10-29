@@ -10,7 +10,7 @@ import User from "./components/users/User";
 // import Home from "./components/pages/Home";
 import About from "./components/pages/About";
 import Contact from "./components/pages/Contact";
-import NotFound from "./components/pages/NotFound";
+// import NotFound from "./components/pages/NotFound";
 
 function App() {
   let githubClientId;
@@ -121,9 +121,7 @@ function App() {
           />
           <Route exact path='/about' component={About} />
           <Route exact path='/contact' component={Contact} />
-          
         </div>
-        
       </div>
     </Switch>
   );
